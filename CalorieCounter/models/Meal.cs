@@ -8,6 +8,7 @@ namespace CalorieCounter.models
     /// </summary>
     class Meal
     {
+        public string Name { get; set; }
         public List<Food> FoodInMeal { get; set; }
         public DateTime DateTimeConsumed { get; set; }
 
