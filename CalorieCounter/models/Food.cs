@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CalorieCounter
+﻿namespace CalorieCounter
 {
     /// <summary>
     /// A single unit of food consumed by the user
@@ -25,6 +19,6 @@ namespace CalorieCounter
         public double FatPerUnit { get; set; }
 
         //Calorie calculation
-        public double CalculateCalories => (ProteinPerUnit * ProteinCalorieFactor) + (CarbsPerUnit * CarbCalorieFactor) + (FatPerUnit * FatCalorieFactor);
+        public double Calories => (ProteinPerUnit * ProteinCalorieFactor) + (CarbsPerUnit * CarbCalorieFactor) + (FatPerUnit * FatCalorieFactor);
     }
 }
