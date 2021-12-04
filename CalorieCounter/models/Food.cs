@@ -3,7 +3,7 @@
     /// <summary>
     /// A single unit of food consumed by the user
     /// </summary>
-    class Food
+    public class Food
     {
 
         private const int ProteinCalorieFactor = 4;
@@ -13,12 +13,14 @@
         //Getters and setters
         public string Name { get; set; }
         public FoodType FoodType { get; set; }
-        public double UnitsConsumed { get; set; }
-        public double ProteinPerUnit { get; set; }
-        public double CarbsPerUnit { get; set; }
-        public double FatPerUnit { get; set; }
+        public double ServingsConsumed { get; set; }
+        public double ProteinPerServing { get; set; }
+        public double CarbsPerServing { get; set; }
+        public double FatPerServing { get; set; }
 
         //Calorie calculation
-        public double Calories => (ProteinPerUnit * ProteinCalorieFactor) + (CarbsPerUnit * CarbCalorieFactor) + (FatPerUnit * FatCalorieFactor);
+        public double Calories => (ProteinPerServing * ProteinCalorieFactor) + 
+            (CarbsPerServing * CarbCalorieFactor) + 
+            (FatPerServing * FatCalorieFactor) * ServingsConsumed;
     }
 }

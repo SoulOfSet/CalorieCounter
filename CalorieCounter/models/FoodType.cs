@@ -7,10 +7,13 @@
     {
         Vegetable,
         Fruit,
-        GrainsLegumesNutsSeeds,
-        MeatPoultry,
+        Grains,
+        Nuts,
+        Meat,
         Fish,
         Dairy,
-        Eggs
+        Eggs,
+        Junk,
+        Other
     }
 }

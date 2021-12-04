@@ -17,12 +17,18 @@ namespace CalorieCounter
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonMealEntry_Click(object sender, EventArgs e)
         {
-            (new FoodEntry()).Show();
+
+            MealEntry mealEntry = new MealEntry
+            {
+                HomeForm = this
+            };
+            Hide();
+            mealEntry.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonRunReport_Click(object sender, EventArgs e)
         {
             (new Report()).Show();
         }

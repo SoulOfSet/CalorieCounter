@@ -52,6 +52,12 @@
     <Compile Include="FoodEntry.Designer.cs">
       <DependentUpon>FoodEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="MealEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MealEntry.Designer.cs">
+      <DependentUpon>MealEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MealEntry.resx">
+      <DependentUpon>MealEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
