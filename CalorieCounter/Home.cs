@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace CalorieCounter
 {
@@ -15,6 +16,7 @@ namespace CalorieCounter
         public Home()
         {
             InitializeComponent();
+            models.sql sql = new models.sql().init();
         }
 
         private void button1_Click(object sender, EventArgs e)

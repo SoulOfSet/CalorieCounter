@@ -209,7 +209,7 @@ namespace CalorieCounter
             this.Controls.Add(this.units);
             this.Controls.Add(this.Type);
             this.Controls.Add(this.Name);
-            this.Name = "FoodEntry";
+            //this.Name = "FoodEntry";
             this.Load += new System.EventHandler(this.FoodEntry_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

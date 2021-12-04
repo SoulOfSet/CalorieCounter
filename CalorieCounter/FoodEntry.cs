@@ -15,7 +15,7 @@ namespace CalorieCounter
         public FoodEntry()
         {
             InitializeComponent();
-            listBox1.Items.AddRange(typeof(FoodType).GetEnumNames());
+
             comboBox1.Items.AddRange(typeof(FoodType).GetEnumNames());
         }
 
