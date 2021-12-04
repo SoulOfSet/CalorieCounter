@@ -11,6 +11,11 @@ namespace CalorieCounter
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Open the meal entry dialog
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonMealEntry_Click(object sender, EventArgs e)
         {
 
@@ -27,6 +32,10 @@ namespace CalorieCounter
             (new Report()).Show();
         }
 
+        /// <summary>
+        /// Add a meal to the database and display last meal added
+        /// </summary>
+        /// <param name="meal"></param>
         public void AddMeal(Meal meal)
         {
             //Add logic for doing SQL to add meal with database
