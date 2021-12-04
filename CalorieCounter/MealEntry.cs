@@ -23,7 +23,6 @@ namespace CalorieCounter
             meal = new Meal();
         }
 
-
         /// <summary>
         /// When clicking the add food button, show the food entry form
         /// </summary>
@@ -43,36 +42,58 @@ namespace CalorieCounter
             foodEntry.Show();
         }
 
+        /// <summary>
+        /// Add a food item to the list of food in the meal
+        /// </summary>
+        /// <param name="newFood"></param>
         public void AddFoodEntry(Food newFood)
         {
             meal.FoodInMeal.Add(newFood);
         }
 
+        /// <summary>
+        /// If the user cancels we need to go back to the home form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCancel_Click(object sender, System.EventArgs e)
         {
             HomeForm.Show();
             Close();
         }
 
+        /// <summary>
+        /// On save, validate the meal name is populated, and that there is any food. If valid
+        /// update the global meal object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSave_Click(object sender, System.EventArgs e)
         {
+            //Validate the meal name
             if (string.IsNullOrEmpty(textBoxMealName.Text))
             {
                 MessageBox.Show("Please enter a name for your meal");
                 return;
             }
 
+            //Validate that there is food in the meal
             if(meal.FoodInMeal.Count == 0)
             {
-                MessageBox.Show("You haven't added any food your meal!");
+                MessageBox.Show("You haven't added any food to your meal!");
                 return;
             }
 
+            //Create our date using our date and time pickers
             meal.DateTimeConsumed = datePickerNewMeal.Value.AddMilliseconds(datePickerNewMeal.Value.Millisecond);
             meal.Name = textBoxMealName.Text;
+
+            //Let the user know something actually happened
             MessageBox.Show("Added your meal!");
 
+            //Go back to the homescreen and update the display
             HomeForm.Show();
+            HomeForm.AddMeal(meal);
             Close();
         }
     }

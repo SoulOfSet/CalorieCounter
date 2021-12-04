@@ -14,16 +14,21 @@ namespace CalorieCounter
             comboBoxFoodTypes.Items.AddRange(typeof(FoodType).GetEnumNames());
         }
 
+        /// <summary>
+        /// Close the window on cancel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// On save, validate and build the food object. Send the object back to the meal for storage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void save_Click(object sender, EventArgs e)
         {
             Food newFoodObject = BuildFoodObjectFromInput();
@@ -34,6 +39,10 @@ namespace CalorieCounter
             }
         }
 
+        /// <summary>
+        /// Validate text input and build food object
+        /// </summary>
+        /// <returns>New food object</returns>
         private Food BuildFoodObjectFromInput()
         {
             double servingsConsumed;
@@ -97,6 +106,11 @@ namespace CalorieCounter
             return food;
         }
 
+        /// <summary>
+        /// When the form is closed we can re-enable the MealEntryForm so the user can continue to work
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FoodEntry_FormClosed(object sender, FormClosedEventArgs e)
         {
             if(MealEntryForm != null)
