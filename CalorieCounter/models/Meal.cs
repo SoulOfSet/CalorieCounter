@@ -6,8 +6,13 @@ namespace CalorieCounter.models
     /// <summary>
     /// A list of food and when it was consumed
     /// </summary>
-    class Meal
+    public class Meal
     {
+        public Meal()
+        {
+            FoodInMeal = new List<Food>();
+        }
+
         public string Name { get; set; }
         public List<Food> FoodInMeal { get; set; }
         public DateTime DateTimeConsumed { get; set; }
