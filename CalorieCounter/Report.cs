@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CalorieCounter
 {
-    public partial class Form1 : Form
+    public partial class Report : Form
     {
-        public Form1()
+        public Report()
         {
             InitializeComponent();
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
