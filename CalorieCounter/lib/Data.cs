@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.IO;
+using CalorieCounter.models;
 
-namespace CalorieCounter.models
+namespace CalorieCounter.lib
 {
 
-    class sql
+    class Data
     {
 
         private string _dataSource = @"c:\temp\cc.db";
         private SQLiteConnection _connection;
         private SQLiteCommand _command;
 
-        public models.sql init()
+        public Data init()
         {
 
 
@@ -66,10 +67,12 @@ namespace CalorieCounter.models
             foreach (Food food in meal.FoodInMeal)
             {
                 Guid food_entry_id = Guid.NewGuid();
-                _command.CommandText = "insert into meal (meal_id,food_entry_id,name,food_type,calories,servingsconsumed,proteinperserving,carbsperserving,fatperserving) values ('" + mealid + "','" + food_entry_id + "','" + food.Name + "','" + food.FoodType + "','" + food.Calories + "','" + food.UnitsConsumed + "','" + food.ProteinPerUnit + "','" + food.CarbsPerUnit + "','" + food.FatPerUnit + "')";
+                _command.CommandText = "insert into meal (meal_id,food_entry_id,name,food_type,calories,servingsconsumed,proteinperserving,carbsperserving,fatperserving) values ('" + mealid + "','" + food_entry_id + "','" + food.Name + "','" + food.FoodType + "','" + food.Calories + "','" + food + "','" + food.ProteinPerServing + "','" + food.CarbsPerServing + "','" + food.FatPerServing + "')";
                 _command.ExecuteNonQuery();
             }
         }
+
+
         public Meal[]  SearchMeal(DateTime start, DateTime end)
         {
             Meal[] meals;
@@ -83,7 +86,7 @@ namespace CalorieCounter.models
                 meal.DateTimeConsumed = new DateTime(meal_results.GetInt32(1));
                 _command.CommandText = "select meal_id,food_entry_id,name,food_type,calories,servingsconsumed,proteinperserving,carbsperserving,fatperserving from meal where meal_id = " + meal_results.GetString(3);
                 SQLiteDataReader food_results = _command.ExecuteReader();
-                while (food_results.Read)){
+                while (food_results.Read()){
                     Food food = new Food();
                     food.Name = food_results.GetString(3);
 
