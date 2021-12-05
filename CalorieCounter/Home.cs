@@ -8,8 +8,6 @@ namespace CalorieCounter
 {
     public partial class Home : Form
     {
-        Data data = new Data(); 
-
         public Home()
         {
             InitializeComponent();
@@ -42,7 +40,7 @@ namespace CalorieCounter
         /// <param name="meal"></param>
         public void AddMeal(Meal meal)
         {
-            //Add logic for doing SQL to add meal with database
+            Data.SaveMeal(meal);
             labelLastMealAdded.Text = "Last meal added: " + meal.Name + " at " + meal.DateTimeConsumed.ToString();
         }
     }
