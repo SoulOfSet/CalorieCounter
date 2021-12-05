@@ -96,5 +96,11 @@ namespace CalorieCounter
             HomeForm.AddMeal(meal);
             Close();
         }
+
+        //Make sure we re-open the home page if this gets closed
+        private void MealEntry_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomeForm.Show();
+        }
     }
 }

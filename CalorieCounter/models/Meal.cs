@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CalorieCounter.models
 {
@@ -18,16 +19,42 @@ namespace CalorieCounter.models
         public DateTime DateTimeConsumed { get; set; }
 
         /// <summary>
-        /// Property that sums the calories of all the food in the meal
+        /// Sum of calories for the meal
         /// </summary>
         public double GetTotalCalories()
         {
-            double totalCalories = 0;
-            foreach (Food food in FoodInMeal)
-            {
-                totalCalories += food.Calories;
-            }
-            return totalCalories;
+            return FoodInMeal.Sum(food => food.Calories);
         }
+
+        /// <summary>
+        /// Sum of protein for the meal
+        /// </summary>
+        public double GetTotalProtein()
+        {
+            return FoodInMeal.Sum(food => food.ProteinPerServing * food.ServingsConsumed);
+        }
+
+        /// <summary>
+        /// Sum of carbs for the meal
+        /// </summary>
+        public double GetTotalCarbs()
+        {
+            return FoodInMeal.Sum(food => food.CarbsPerServing * food.ServingsConsumed);
+        }
+
+        /// <summary>
+        /// Sum of fat for the meal
+        /// </summary>
+        public double GetTotalFat()
+        {
+            return FoodInMeal.Sum(food => food.FatPerServing * food.ServingsConsumed);
+        }
+
+
+        public double GetServingCountForFoodType(FoodType foodType)
+        {
+            return FoodInMeal.Where(food => food.FoodType == foodType).Sum(food => food.ServingsConsumed);
+        }
+
     }
 }

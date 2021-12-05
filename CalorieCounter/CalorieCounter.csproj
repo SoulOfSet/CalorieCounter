@@ -48,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -74,6 +75,7 @@
     <Compile Include="MealEntry.Designer.cs">
       <DependentUpon>MealEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\ReportData.cs" />
     <Compile Include="Report.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +114,7 @@
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\CalorieCounter.models.ReportData.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

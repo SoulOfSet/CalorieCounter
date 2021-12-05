@@ -1,7 +1,6 @@
 ﻿using CalorieCounter.lib;
 using CalorieCounter.models;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CalorieCounter

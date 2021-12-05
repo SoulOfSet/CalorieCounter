@@ -90,7 +90,7 @@ namespace CalorieCounter
             this.Controls.Add(this.buttonRunReport);
             this.Controls.Add(this.buttonMealEntry);
             this.Name = "Home";
-            this.Text = "Form1";
+            this.Text = "Home";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -139,6 +139,7 @@ namespace CalorieCounter
             this.Controls.Add(this.labelNewMealHeader);
             this.Name = "MealEntry";
             this.Text = "New Meal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MealEntry_FormClosed);
             this.Shown += new System.EventHandler(this.MealEntry_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
