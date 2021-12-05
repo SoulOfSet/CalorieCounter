@@ -1,11 +1,15 @@
-﻿using CalorieCounter.models;
+﻿using CalorieCounter.lib;
+using CalorieCounter.models;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CalorieCounter
 {
     public partial class Home : Form
     {
+        Data data = new Data(); 
+
         public Home()
         {
             InitializeComponent();
